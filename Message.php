@@ -149,6 +149,14 @@ class Message extends BaseMessage
 
         return $this;
     }
+    
+    /**
+     * @inheritdoc
+     */
+    public function getTextBody()
+    {
+        return $this->getSendGridMessage()->getText();
+    }
 
     /**
      * @inheritdoc
@@ -159,7 +167,15 @@ class Message extends BaseMessage
 
         return $this;
     }
-
+    
+    /**
+     * @inheritdoc
+     */
+    public function getHtmlBody()
+    {
+        return $this->getSendGridMessage()->getHtml();
+    }
+    
     /**
      * @inheritdoc
      */
